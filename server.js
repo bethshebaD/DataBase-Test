@@ -4,8 +4,12 @@ const app = express();
 const connectDB = require('./DB/Connection');
 connectDB();
 
+//returns json data
 app.use(express.json({ extended: false }));
-//app.use('/api/userModel', require('./Api/User'));
+
+//this is connection with the Api-> User.js
+app.use('/api/userModel', require('./Api/User'));
+
 //checks if port is free or use 3000
 const Port = process.env.Port || 3000;
 
