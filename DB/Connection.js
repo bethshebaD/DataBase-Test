@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
+require("dotenv").config();
 
-const URI = "mongodb+srv://mongouser:Jesus@1003@cluster0.r6lsz.mongodb.net/sample_airbnb?retryWrites=true&w=majority";
 
 const connectDB = async () => {
-  await mongoose.connect(URI, {
+  await mongoose.connect(process.env.MONGOURI, {
     useUnifiedTopology: true,
     useNewUrlParser: true
   });
